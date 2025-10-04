@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h3>{{ title }}</h3>
+  <form method="post">
+    {{ form.hidden_tag() }}
+
+    <div class="mb-3">
+      {{ form.roll_no.label }}
+      {{ form.roll_no(class_='form-control') }}
+      {% for e in form.roll_no.errors %}
+        <div class="text-danger">{{ e }}</div>
+      {% endfor %}
+    </div>
+
+    <div class="mb-3">
+      {{ form.name.label }}
+      {{ form.name(class_='form-control') }}
+      {% for e in form.name.errors %}
+        <div class="text-danger">{{ e }}</div>
+      {% endfor %}
+    </div>
+
+    <div class="mb-3">
+      {{ form.age.label }}
+      {{ form.age(class_='form-control') }}
+      {% for e in form.age.errors %}
+        <div class="text-danger">{{ e }}</div>
+      {% endfor %}
+    </div>
+
+    <div class="mb-3">
+      {{ form.gender.label }}
+      {{ form.gender(class_='form-select') }}
+      {% for e in form.gender.errors %}
+        <div class="text-danger">{{ e }}</div>
+      {% endfor %}
+    </div>
+
+    <div class="mb-3">
+      {{ form.course.label }}
+      {{ form.course(class_='form-control') }}
+      {% for e in form.course.errors %}
+        <div class="text-danger">{{ e }}</div>
+      {% endfor %}
+    </div>
+
+    <!-- Fixed submit button -->
+    <div class="mb-3">
+      {{ form.submit(class_='btn btn-primary') }}
+      <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+    </div>
+  </form>
+{% endblock %}

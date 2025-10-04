@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<h3>View Student</h3>
+<dl class="row">
+    <dt class="col-sm-3">Roll No</dt><dd class="col-sm-9">{{ student.roll_no }}</dd>
+    <dt class="col-sm-3">Name</dt><dd class="col-sm-9">{{ student.name }}</dd>
+    <dt class="col-sm-3">Age</dt><dd class="col-sm-9">{{ student.age }}</dd>
+    <dt class="col-sm-3">Gender</dt><dd class="col-sm-9">{{ student.gender }}</dd>
+    <dt class="col-sm-3">Course</dt><dd class="col-sm-9">{{ student.course }}</dd>
+</dl>
+<a href="{{ url_for('edit_student', id=student.id) }}" class="btn btn-primary">Edit</a>
+<a href="{{ url_for('index') }}" class="btn btn-secondary">Back</a>
+{% endblock %}
